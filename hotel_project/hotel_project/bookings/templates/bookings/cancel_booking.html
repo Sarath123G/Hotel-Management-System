@@ -1,0 +1,13 @@
+{% extends 'bookings/base.html' %}
+
+{% block title %}Cancel Booking{% endblock %}
+
+{% block content %}
+<h2>Cancel Booking</h2>
+<p>Are you sure you want to cancel the booking of {{ booking.guest_name }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Cancel</button>
+    <a href="{% url 'booking_list' %}">Go Back</a>
+</form>
+{% endblock %}
